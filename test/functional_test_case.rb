@@ -19,27 +19,27 @@ class FunctionalTestCase < ActionController::TestCase
   # temporarily silence deprecation warnings
   # ActiveSupport::Deprecation.silenced = true
 
-  def get(*args, **kwargs, &block)
+  def get(*args, &block)
     args = check_for_params(args)
-    super(*args, **kwargs, &block)
+    super(*args, &block)
     check_for_unsafe_html!
   end
 
-  def post(*args, **kwargs, &block)
+  def post(*args, &block)
     args = extract_body(check_for_params(args))
-    super(*args, **kwargs, &block)
+    super(*args, &block)
     check_for_unsafe_html!
   end
 
-  def put(*args, **kwargs, &block)
+  def put(*args, &block)
     args = check_for_params(args)
-    super(*args, **kwargs, &block)
+    super(*args, &block)
     check_for_unsafe_html!
   end
 
-  def delete(*args, **kwargs, &block)
+  def delete(*args, &block)
     args = check_for_params(args)
-    super(*args, **kwargs, &block)
+    super(*args, &block)
     check_for_unsafe_html!
   end
 
